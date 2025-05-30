@@ -9,7 +9,7 @@ import datetime
 logging.basicConfig(
     filename='log.txt',
     level=logging.WARNING,
-    format='%(asctime)s - ALARMĂ - %(message)s'
+    format='%(asctime)s - ALARMA - %(message)s'
 )
 
 PRAG_CPU = 90
@@ -22,11 +22,11 @@ timpuri = []
 
 def verifica_prag(nume_componenta, valoare):
     if nume_componenta == "CPU" and valoare >= PRAG_CPU:
-        print(f"[ALARMĂ] CPU a ajuns la {valoare:.2f}%")
-        logging.warning(f"CPU a depășit pragul: {valoare:.2f}%")
+        print(f"[ALARMA] CPU a ajuns la {valoare:.2f}%")
+        logging.warning(f"CPU a depasit pragul: {valoare:.2f}%")
     elif nume_componenta == "RAM" and valoare >= PRAG_RAM:
-        print(f"[ALARMĂ] RAM a ajuns la {valoare:.2f}%")
-        logging.warning(f"RAM a depășit pragul: {valoare:.2f}%")
+        print(f"[ALARMA] RAM a ajuns la {valoare:.2f}%")
+        logging.warning(f"RAM a depasit pragul: {valoare:.2f}%")
 
 def actualizeaza(frame):
     utilizare_cpu = psutil.cpu_percent(interval=None)
@@ -50,7 +50,7 @@ def actualizeaza(frame):
     ax.plot(range(len(valori_ram)), valori_ram, label='RAM (%)', color='green')
     ax.set_ylim(0, 100)
     ax.set_ylabel('Utilizare (%)')
-    ax.set_title('Monitorizare în timp real a resurselor')
+    ax.set_title('Monitorizare in timp real a resurselor')
     ax.set_xticks(range(len(timpuri)))
     ax.set_xticklabels(timpuri, rotation=45, ha='right')
     ax.legend()
@@ -61,4 +61,8 @@ fig, ax = plt.subplots()
 ani = animation.FuncAnimation(fig, actualizeaza, interval=1000, cache_frame_data=False)
 plt.tight_layout()
 plt.show()
-
+try:
+    plt.tight_layout()
+    plt.show()
+except KeyboardInterrupt:
+    print("Monitorizarea a fost întreruptă manual.")

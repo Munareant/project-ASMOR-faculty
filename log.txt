@@ -1,4 +1,5 @@
-2025-05-18 00:04:58,036 - ALARM\u0102 - CPU usage exceeded: 100.00%
-2025-05-18 00:04:59,410 - ALARM\u0102 - CPU usage exceeded: 100.00%
-2025-05-18 00:05:00,539 - ALARM\u0102 - CPU usage exceeded: 100.00%
-2025-05-18 00:05:01,576 - ALARM\u0102 - CPU usage exceeded: 100.00%
+2025-05-25 20:13:58,386 - ALARMA - CPU a depasit pragul: 100.00%
+2025-05-25 20:13:59,430 - ALARMA - CPU a depasit pragul: 100.00%
+2025-05-25 20:15:50,241 - ALARMA - CPU a depasit pragul: 97.40%
+2025-05-25 20:15:51,772 - ALARMA - CPU a depasit pragul: 100.00%
+2025-05-25 20:15:52,935 - ALARMA - CPU a depasit pragul: 100.00%
